@@ -4,13 +4,20 @@ export class Cube {
     x = 0;
     y = 0;
     z = 0;
+    pressed = {
+        left: false,
+        up: false,
+        down: false,
+        right: false,
+    }
 
-
-    constructor(texture) {
+    constructor(texture, username) {
         const geometry = new THREE.BoxGeometry();
         const material = new THREE.MeshBasicMaterial( { map:  texture} );
         this.obj = new THREE.Mesh( geometry, material );
+        this.username = username;
         scene.add(this.obj);
+    
     }
 
 
